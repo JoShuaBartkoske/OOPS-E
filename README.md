@@ -32,3 +32,11 @@ Simulations require a blank field file output to FITS format.
 
 ### Notes
 Note 1: Runs with T1 sampling at a different rate than T2/T3/T4 are currently unsupported
+Note 2: For developers, the list of imports you need for running OOPS-E are as follows:
+*  numpy
+*  matplotlib
+*  scipy
+*  astropy
+*  seaborn
+*  pint-pulsar (IMPORTANT: Do not install "pint" which is a separate units-management pacakge using PyPi)
+*  tqdm
