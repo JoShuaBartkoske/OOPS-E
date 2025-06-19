@@ -178,10 +178,10 @@ for j,rundate in enumerate(dates):
         pts3 = 2*hz/spacing3
         pts4 = 2*hz/spacing4
 
-        p1 = calc_p_gumball(time1,dig1,p,1,rundate,spacing1,samp=samp1,numpoints=pts1,plot=True,showplots=False)
-        p2 = calc_p_gumball(time2,dig2,p,2,rundate,spacing2,samp=samp, numpoints=pts2,plot=True,showplots=False)
-        p3 = calc_p_gumball(time3,dig3,p,3,rundate,spacing3,samp=samp, numpoints=pts3,plot=True,showplots=False)
-        p4 = calc_p_gumball(time4,dig4,p,4,rundate,spacing4,samp=samp, numpoints=pts4,plot=True,showplots=False)
+        p1 = calc_p_gumball(time1,dig1,p,1,rundate,spacing1,amp, samp=samp1,numpoints=pts1,plot=True,showplots=False)
+        p2 = calc_p_gumball(time2,dig2,p,2,rundate,spacing2,amp, samp=samp, numpoints=pts2,plot=True,showplots=False)
+        p3 = calc_p_gumball(time3,dig3,p,3,rundate,spacing3,amp, samp=samp, numpoints=pts3,plot=True,showplots=False)
+        p4 = calc_p_gumball(time4,dig4,p,4,rundate,spacing4,amp, samp=samp, numpoints=pts4,plot=True,showplots=False)
         
         p_array.append(p1)
         p_array.append(p2)
