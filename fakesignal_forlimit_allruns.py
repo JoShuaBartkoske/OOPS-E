@@ -19,12 +19,26 @@ from astropy.io import fits
 import seaborn as sns
 from oopse2 import *
 import os
+from tqdm.auto import tqdm
 sns.set(font="Geneva",style='ticks',context='talk')
 
+# functions
+
+# VERITAS ECM empirical relations
+## convert VERITAS ECM voltage to an integrated magnitude of stars in field of view of central pixel
+def get_mag(signal):
+    return ((np.log10(np.abs(signal)) - 2.27458167)/-0.40355447)
+
+## integrated magnitude of stars in central pixel to a voltage in the VERITAS ECM
+def get_V(mag):
+    return 10**(-0.4*mag+2.27458167)
+
+# simple sinusoid model for fake pulsar signal
 def sinusoid(t,a,f,phi):
     return a*(np.cos(2*np.pi*f*t + phi)+ 1j*np.sin(2*np.pi*f*t))
 
-# ChatGPT produced the frame.
+# ChatGPT produced the frame for this function to convert the wikitable format to a panda dataframe.
+# I made sure it works with the specific information I want from the wikitable.
 def wiki_table_to_dataframe(filename):
     with open(filename, 'r') as file:
         lines = [line.strip() for line in file if line.strip()]
@@ -64,11 +78,11 @@ def wiki_table_to_dataframe(filename):
     df = pd.DataFrame(rows, columns=headers)
     return df
 
-
 # Example usage
 df = wiki_table_to_dataframe('wikitable.txt')
 print(df)
 
+# SET-UP
 # set up the directory for the data
 data_directory = '../data/psrj2229_fits/'
 
@@ -77,6 +91,100 @@ for file in os.listdir(data_directory):
     if file.endswith('fits'):
         print(file)
 
+# voltages for the injected sinusoidal signals
+amps = np.linspace(1e-7,7e-6,5)
+
+# pulse frequency - doesn't really need to match actual frequency exactly
+p = 19
+
+all_pvals = []
+
 # Now we use the Run name as the 'date' and loop
+dates = df["Run name"].values[:2]
+print(dates)
 
+a = input("Pause before entering the abyss and state your cause.")
+for j,rundate in enumerate(dates):
+    # open four files for each date
+    hdul1 = fits.open(f"../data/psrj2229_fits/j2229_{rundate}_T1.fits")
+    hdul2 = fits.open(f"../data/psrj2229_fits/j2229_{rundate}_T2.fits")
+    hdul3 = fits.open(f"../data/psrj2229_fits/j2229_{rundate}_T3.fits")
+    hdul4 = fits.open(f"../data/psrj2229_fits/j2229_{rundate}_T4.fits")
 
+    # define signal and times from data for each telescope
+    t1, time1 = hdul1[1].data['signal'], hdul1[1].data['time']
+    t2, time2 = hdul2[1].data['signal'], hdul2[1].data['time']
+    t3, time3 = hdul3[1].data['signal'], hdul3[1].data['time']
+    t4, time4 = hdul4[1].data['signal'], hdul4[1].data['time']
+
+    # calculate sampling rate for T1 and the other three telescope
+    samp1 = int(1/(time1[1]-time1[0]))
+    samp = int(1/(time2[1]-time2[0]))
+
+    # undigitize the data by randomly adding noise below the digitization limit
+    on1 = t1 + np.random.uniform((-1.22e-5)/2,(1.22e-5)/2,len(t1))
+    on2 = t2 + np.random.uniform((-1.22e-5)/2,(1.22e-5)/2,len(t2))
+    on3 = t3 + np.random.uniform((-1.22e-5)/2,(1.22e-5)/2,len(t3))
+    on4 = t4 + np.random.uniform((-1.22e-5)/2,(1.22e-5)/2,len(t4))
+
+    for amp in tqdm(amps):
+        sin1 = np.real(sinusoid(time2,amp,p,0))
+        sin2 = np.real(sinusoid(time2,amp,p,0))
+        sin3 = np.real(sinusoid(time3,amp,p,0))
+        sin4 = np.real(sinusoid(time4,amp,p,0))
+        
+        signal1 = on1 + sin1
+        signal2 = on2 + sin2
+        signal3 = on3 + sin3
+        signal4 = on4 + sin4
+        
+        # re-digitize
+        step = 1.22e-5 #G100
+        edges = np.arange(-1,1,step)
+
+        dig1 = np.zeros(len(signal1))
+        dig2 = np.zeros(len(signal2))
+        dig3 = np.zeros(len(signal3))
+        dig4 = np.zeros(len(signal4))
+
+        dig_bins1 = np.digitize(signal1,edges,right=True)
+        dig_bins2 = np.digitize(signal2,edges,right=True)
+        dig_bins3 = np.digitize(signal3,edges,right=True)
+        dig_bins4 = np.digitize(signal4,edges,right=True)
+
+        for i,b in enumerate(dig_bins2):
+            dig1[i] = edges[dig_bins1[i]-1]
+            dig2[i] = edges[dig_bins2[i]-1]
+            dig3[i] = edges[dig_bins3[i]-1]
+            dig4[i] = edges[dig_bins4[i]-1]
+        
+        spacing1 = get_spacing(samp,len(dig2))
+        spacing2 = get_spacing(samp,len(dig2))
+        spacing3 = get_spacing(samp,len(dig3))
+        spacing4 = get_spacing(samp,len(dig4))
+        
+        
+        harmonics = 1
+        p_array=[]
+        
+        # on window - get from wiki page
+        hz = float(df["Window size [Hz]"][j])
+        
+        pts1 = 2*hz/spacing1
+        pts2 = 2*hz/spacing2 
+        pts3 = 2*hz/spacing3
+        pts4 = 2*hz/spacing4
+
+        p1 = calc_p_gumball(time1,dig1,p,1,rundate,spacing1,samp=samp1,numpoints=pts1,plot=True,showplots=False)
+        p2 = calc_p_gumball(time2,dig2,p,2,rundate,spacing2,samp=samp, numpoints=pts2,plot=True,showplots=False)
+        p3 = calc_p_gumball(time3,dig3,p,3,rundate,spacing3,samp=samp, numpoints=pts3,plot=True,showplots=False)
+        p4 = calc_p_gumball(time4,dig4,p,4,rundate,spacing4,samp=samp, numpoints=pts4,plot=True,showplots=False)
+        
+        p_array.append(p1)
+        p_array.append(p2)
+        p_array.append(p3)
+        p_array.append(p4)
+        
+        all_pvals.append(p_array)
+        
+        print(amp,calc_sigma(p_array),p_array)
