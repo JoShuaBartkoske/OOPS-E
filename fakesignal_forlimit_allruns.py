@@ -92,7 +92,7 @@ for file in os.listdir(data_directory):
         print(file)
 
 # voltages for the injected sinusoidal signals
-amps = np.linspace(1e-7,7e-6,5)
+amps = np.linspace(1e-8,7e-7,5)
 
 # pulse frequency - doesn't really need to match actual frequency exactly
 p = 19
