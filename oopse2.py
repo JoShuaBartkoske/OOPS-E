@@ -237,7 +237,7 @@ def gumbel_CDF(x,mu=3.72,b=1.83):
     z = ((x - mu)/b)
     return np.exp(-np.exp(-z))
 
-def calc_p_gumball(time,signal,ephemeris,tel,spacing,samp=2400,numpoints=6,plot=True):
+def calc_p_gumball(time,signal,ephemeris,tel,runnum,spacing,samp=2400,numpoints=6,plot=True):
     ps = np.array(())
     pvals = np.array(())
         
@@ -282,7 +282,7 @@ def calc_p_gumball(time,signal,ephemeris,tel,spacing,samp=2400,numpoints=6,plot=
             plt.axvspan(frequency[on][0],frequency[on][-1],alpha=0.5,color='g',label='ON region')
             plt.fill_between(frequency, 0, max(power), where=mask, color='r', alpha=0.5,label='OFF region')
             plt.ticklabel_format(useOffset=False)
-            plt.title(f'T{tel} L-S Periodogram')
+            plt.title(f'T{tel} L-S Periodogram for Run#:{runnum}')
             plt.xlabel('Frequency [Hz]')
             plt.ylabel('Power [A.U.]')
             #plt.xlim(p-0.5, p+0.5)
@@ -298,7 +298,7 @@ def calc_p_gumball(time,signal,ephemeris,tel,spacing,samp=2400,numpoints=6,plot=
             #plt.plot(freqfit,gauss(freqfit,*popt),label='Gaussian Fit')
 
             plt.ticklabel_format(useOffset=False)
-            plt.title(f'T{tel} L-S Periodogram')
+            plt.title(f'T{tel} L-S Periodogram for Run#:{runnum}')
             plt.xlabel('Frequency [Hz]')
             plt.ylabel('Power [A.U.]')
             plt.xlim(p-spacing*(numpoints/2)-spacing,p+spacing*(numpoints/2))
