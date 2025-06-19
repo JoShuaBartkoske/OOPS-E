@@ -291,8 +291,9 @@ def calc_p_gumball(time,signal,ephemeris,tel,runnum,spacing,samp=2400,numpoints=
             if showplots:
                 plt.show()
             else:
-                plt.savefig(f"{runnum}-{tel}-J2229-LSperiodogram.png",dpi=350)
-            
+                plt.savefig(f"../figures/{runnum}-{tel}-J2229-LSperiodogram.png",dpi=350)
+            plt.close()
+
             plt.figure(figsize=(8,6))
             plt.plot(frequency,power,'k',marker='o')
             plt.axvline(p,color='k',alpha=0.2,linestyle='--',label='Pulse Frequency')
@@ -309,7 +310,8 @@ def calc_p_gumball(time,signal,ephemeris,tel,runnum,spacing,samp=2400,numpoints=
             if showplots:
                 plt.show()
             else:
-                plt.savefig(f"{runnum}-{tel}-J2229-LSperiodogram-zoomed.png",dpi=350)
+                plt.savefig(f"../figures/{runnum}-{tel}-J2229-LSperiodogram-zoomed.png",dpi=350)
+            plt.close()
 
     return P
 
