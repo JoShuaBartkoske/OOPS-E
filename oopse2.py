@@ -237,7 +237,7 @@ def gumbel_CDF(x,mu=3.72,b=1.83):
     z = ((x - mu)/b)
     return np.exp(-np.exp(-z))
 
-def calc_p_gumball(time,signal,ephemeris,tel,runnum,spacing,samp=2400,numpoints=6,plot=True, showplots=False):
+def calc_p_gumball(time,signal,ephemeris,tel,runnum,spacing,amplitude, samp=2400,numpoints=6,plot=True, showplots=False):
     ps = np.array(())
     pvals = np.array(())
         
@@ -291,7 +291,7 @@ def calc_p_gumball(time,signal,ephemeris,tel,runnum,spacing,samp=2400,numpoints=
             if showplots:
                 plt.show()
             else:
-                plt.savefig(f"../figures/{runnum}-{tel}-J2229-LSperiodogram.png",dpi=350)
+                plt.savefig(f"../figures/{runnum}-{tel}-J2229-LSperiodogram-{amplitude:.2e}.png",dpi=350)
             plt.close()
 
             plt.figure(figsize=(8,6))
@@ -310,7 +310,7 @@ def calc_p_gumball(time,signal,ephemeris,tel,runnum,spacing,samp=2400,numpoints=
             if showplots:
                 plt.show()
             else:
-                plt.savefig(f"../figures/{runnum}-{tel}-J2229-LSperiodogram-zoomed.png",dpi=350)
+                plt.savefig(f"../figures/{runnum}-{tel}-J2229-LSperiodogram-{amplitude:.2e}-zoomed.png",dpi=350)
             plt.close()
 
     return P
