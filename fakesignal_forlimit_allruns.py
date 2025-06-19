@@ -97,6 +97,11 @@ amps = np.linspace(1e-7,7e-6,5)
 # pulse frequency - doesn't really need to match actual frequency exactly
 p = 19
 
+        
+# re-digitization step require defined digitization step and all values between -1 and 1.
+step = 1.22e-5 #G100
+edges = np.arange(-1,1,step)
+
 all_pvals = []
 
 # Now we use the Run name as the 'date' and loop
@@ -104,6 +109,7 @@ dates = df["Run name"].values[:2]
 print(dates)
 
 a = input("Pause before entering the abyss and state your cause.")
+
 for j,rundate in enumerate(dates):
     # open four files for each date
     hdul1 = fits.open(f"../data/psrj2229_fits/j2229_{rundate}_T1.fits")
@@ -137,11 +143,8 @@ for j,rundate in enumerate(dates):
         signal2 = on2 + sin2
         signal3 = on3 + sin3
         signal4 = on4 + sin4
-        
-        # re-digitize
-        step = 1.22e-5 #G100
-        edges = np.arange(-1,1,step)
 
+        # re-digitization
         dig1 = np.zeros(len(signal1))
         dig2 = np.zeros(len(signal2))
         dig3 = np.zeros(len(signal3))
