@@ -2,6 +2,8 @@ import numpy as np
 from matplotlib import pyplot as plt
 from astropy.timeseries import LombScargle
 import scipy.stats as st
+import scipy.optimize as optimize
+import scipy.integrate as integrate
 
 
 def plot_raw(signal, time, dir, date, runnum, tel):
@@ -64,7 +66,7 @@ def exponential(t, amp, tref, trise, tdecay, c):
     return out
 
 
-def smeared_gaussian(x, a, b, c, d, decay=-(1 / 349) / p):
+def smeared_gaussian(x, a, b, c, d, decay=-(1 / 349) ): # there was a divide by "p" in the decay constant, not sure what that was.
     f = gauss(x, a, b, c, d)
     f = f / np.sum(f)
     g = exponential(x, a, b, -1e-16, decay, d)
