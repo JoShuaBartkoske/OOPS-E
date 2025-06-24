@@ -84,6 +84,8 @@ def wiki_table_to_dataframe(filename):
 df = wiki_table_to_dataframe('wikitable.txt')
 print(df)
 
+df.drop([15])
+
 # SET-UP
 # set up the directory for the data
 data_directory = '../data/psrj2229_fits/'
