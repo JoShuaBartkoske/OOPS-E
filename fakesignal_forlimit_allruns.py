@@ -20,6 +20,8 @@ import seaborn as sns
 from oopse2 import *
 import os
 from tqdm.auto import tqdm
+import logging
+import time
 sns.set(font="Geneva",style='ticks',context='talk')
 
 # functions
@@ -86,16 +88,26 @@ print(df)
 # set up the directory for the data
 data_directory = '../data/psrj2229_fits/'
 
+# set up file for logging
+logfilename = "psrj2229_allfiles.log"
+logging.basicConfig(filename=logfilename, level=logging.INFO)
+
+logging.info(f"time started: {time.localtime()}")
+
 # print every fits file in the data directory
 for file in os.listdir(data_directory):
     if file.endswith('fits'):
         print(file)
 
-# voltages for the injected sinusoidal signals
-amps = np.linspace(1e-8,7e-7,5)
+# voltages for the injected sinusoidal signals from magnitudes 19, 20, 21, 22, and 23
+mags = np.arange(start=19,stop=24)
+amps = get_V(mags)
+logging.info(f"Magnitudes tested: {mags}")
+logging.info(f"Amplitudes corresponds to above magnitudes: {amps}")
 
 # pulse frequency - doesn't really need to match actual frequency exactly
 p = 19
+logging.info(f"Pulse frequency: {p}")
 
         
 # re-digitization step require defined digitization step and all values between -1 and 1.
@@ -105,12 +117,15 @@ edges = np.arange(-1,1,step)
 all_pvals = []
 
 # Now we use the Run name as the 'date' and loop
-dates = df["Run name"].values[:2]
+dates = df["Run name"].values
 print(dates)
 
 a = input("Pause before entering the abyss and state your cause.")
 
 for j,rundate in enumerate(dates):
+    logging.info(f"Start analysis of run: {rundate}")
+    logging.info("---------------------------------------")
+    
     # open four files for each date
     hdul1 = fits.open(f"../data/psrj2229_fits/j2229_{rundate}_T1.fits")
     hdul2 = fits.open(f"../data/psrj2229_fits/j2229_{rundate}_T2.fits")
@@ -134,6 +149,7 @@ for j,rundate in enumerate(dates):
     on4 = t4 + np.random.uniform((-1.22e-5)/2,(1.22e-5)/2,len(t4))
 
     for amp in tqdm(amps):
+        logging.info(f"   * amplitude of injected signal: {amp} V")
         sin1 = np.real(sinusoid(time2,amp,p,0))
         sin2 = np.real(sinusoid(time2,amp,p,0))
         sin3 = np.real(sinusoid(time3,amp,p,0))
@@ -172,6 +188,7 @@ for j,rundate in enumerate(dates):
         
         # on window - get from wiki page
         hz = float(df["Window size [Hz]"][j])
+        logging.info(f"   * window size: {hz} Hz")
         
         pts1 = 2*hz/spacing1
         pts2 = 2*hz/spacing2 
@@ -189,5 +206,9 @@ for j,rundate in enumerate(dates):
         p_array.append(p4)
         
         all_pvals.append(p_array)
-        
-        print(amp,calc_sigma(p_array),p_array)
+        sig = calc_sigma(p_array)
+        print(amp,sig,p_array)
+        logging.info(f"   * gumball_p_array: {p_array}")
+        logging.info(rf"   * total significance: {sig} $\sigma$")
+
+logging.info(f"time finished: {time.localtime()}")
