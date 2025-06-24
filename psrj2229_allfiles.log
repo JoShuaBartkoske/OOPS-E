@@ -1,0 +1,50 @@
+INFO:root:time started: time.struct_time(tm_year=2025, tm_mon=6, tm_mday=24, tm_hour=12, tm_min=22, tm_sec=55, tm_wday=1, tm_yday=175, tm_isdst=1)
+INFO:root:Magnitudes tested: [19 20 21 22 23]
+INFO:root:Amplitudes corresponds to above magnitudes: [4.72695720e-06 1.88183556e-06 7.49172229e-07 2.98250836e-07
+ 1.18735797e-07]
+INFO:root:Pulse frequency: 19
+INFO:root:Start analysis of run: 20231207
+INFO:root:---------------------------------------
+INFO:root:   * amplitude of injected signal: 4.726957199751552e-06 V
+INFO:root:   * window size: 0.1 Hz
+INFO:root:   * gumball_p_array: [np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0)]
+INFO:root:   * total significance: inf $\sigma$
+INFO:root:   * amplitude of injected signal: 1.881835556120575e-06 V
+INFO:root:   * window size: 0.1 Hz
+INFO:root:   * gumball_p_array: [np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0)]
+INFO:root:   * total significance: inf $\sigma$
+INFO:root:   * amplitude of injected signal: 7.491722286941286e-07 V
+INFO:root:   * window size: 0.1 Hz
+INFO:root:   * gumball_p_array: [np.float64(5.259399818424715e-05), np.float64(4.1171870357459284e-08), np.float64(7.42365058314931e-11), np.float64(7.080296349215587e-10)]
+INFO:root:   * total significance: inf $\sigma$
+INFO:root:   * amplitude of injected signal: 2.9825083622267684e-07 V
+INFO:root:   * window size: 0.1 Hz
+INFO:root:   * gumball_p_array: [np.float64(0.9550855699098847), np.float64(0.2093901643345667), np.float64(0.6113614528331421), np.float64(0.5883005443345405)]
+INFO:root:   * total significance: -0.6097975299168692 $\sigma$
+INFO:root:   * amplitude of injected signal: 1.1873579652382429e-07 V
+INFO:root:   * window size: 0.1 Hz
+INFO:root:   * gumball_p_array: [np.float64(0.9543186827175143), np.float64(0.20965086606387628), np.float64(0.9993467192520753), np.float64(0.9938255201634617)]
+INFO:root:   * total significance: -1.3982270271022963 $\sigma$
+INFO:root:Start analysis of run: 20231019
+INFO:root:---------------------------------------
+INFO:root:   * amplitude of injected signal: 4.726957199751552e-06 V
+INFO:root:   * window size: 0.03 Hz
+INFO:root:   * gumball_p_array: [np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0)]
+INFO:root:   * total significance: inf $\sigma$
+INFO:root:   * amplitude of injected signal: 1.881835556120575e-06 V
+INFO:root:   * window size: 0.03 Hz
+INFO:root:   * gumball_p_array: [np.float64(1.447508779506279e-12), np.float64(1.1102230246251565e-16), np.float64(7.093214904330125e-13), np.float64(6.013234354895758e-11)]
+INFO:root:   * total significance: inf $\sigma$
+INFO:root:   * amplitude of injected signal: 7.491722286941286e-07 V
+INFO:root:   * window size: 0.03 Hz
+INFO:root:   * gumball_p_array: [np.float64(0.44584008390552643), np.float64(0.13004323394203732), np.float64(0.2863640069076089), np.float64(0.9060875371366414)]
+INFO:root:   * total significance: 0.2637215239272586 $\sigma$
+INFO:root:   * amplitude of injected signal: 2.9825083622267684e-07 V
+INFO:root:   * window size: 0.03 Hz
+INFO:root:   * gumball_p_array: [np.float64(0.649452294876873), np.float64(0.8904157865513579), np.float64(0.7660006762632535), np.float64(0.9075054068706989)]
+INFO:root:   * total significance: -2.19657670407448 $\sigma$
+INFO:root:   * amplitude of injected signal: 1.1873579652382429e-07 V
+INFO:root:   * window size: 0.03 Hz
+INFO:root:   * gumball_p_array: [np.float64(0.6480738905631054), np.float64(0.8908900495212353), np.float64(0.7656282586408354), np.float64(0.9109369321325398)]
+INFO:root:   * total significance: -2.1989840485809746 $\sigma$
+INFO:root:time finished: time.struct_time(tm_year=2025, tm_mon=6, tm_mday=24, tm_hour=12, tm_min=35, tm_sec=2, tm_wday=1, tm_yday=175, tm_isdst=1)
