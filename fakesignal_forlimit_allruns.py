@@ -128,89 +128,74 @@ for j,rundate in enumerate(dates):
     logging.info(f"Start analysis of run: {rundate}")
     logging.info("---------------------------------------")
     
-    # open four files for each date
-    hdul1 = fits.open(f"../data/psrj2229_fits/j2229_{rundate}_T1.fits")
-    hdul2 = fits.open(f"../data/psrj2229_fits/j2229_{rundate}_T2.fits")
-    hdul3 = fits.open(f"../data/psrj2229_fits/j2229_{rundate}_T3.fits")
-    hdul4 = fits.open(f"../data/psrj2229_fits/j2229_{rundate}_T4.fits")
+    # open files for each date
+    # make sure we have the total number of telescopes for each date:
+    telescopes = ["T1", "T2", "T3", "T4"]
+    hduls = {}
 
-    # define signal and times from data for each telescope
-    t1, time1 = hdul1[1].data['signal'], hdul1[1].data['time']
-    t2, time2 = hdul2[1].data['signal'], hdul2[1].data['time']
-    t3, time3 = hdul3[1].data['signal'], hdul3[1].data['time']
-    t4, time4 = hdul4[1].data['signal'], hdul4[1].data['time']
+    for tel in telescopes:
+        path = f"../data/psrj2229_fits/j2229_{rundate}_{tel}.fits"
+        if os.path.exists(path):
+            hduls[tel] = fits.open(path)
+            logging.info(f"   * Opened file: {path}")
+        else:
+            logging.warning(f"========File not found: {path}=======")
+            continue
 
-    # calculate sampling rate for T1 and the other three telescope
-    samp1 = int(1/(time1[1]-time1[0]))
-    samp = int(1/(time2[1]-time2[0]))
+    if not hduls:
+        logging.error(f"No valid FITS files found for run {rundate} skipping...")
+        continue
 
-    # undigitize the data by randomly adding noise below the digitization limit
-    on1 = t1 + np.random.uniform((-1.22e-5)/2,(1.22e-5)/2,len(t1))
-    on2 = t2 + np.random.uniform((-1.22e-5)/2,(1.22e-5)/2,len(t2))
-    on3 = t3 + np.random.uniform((-1.22e-5)/2,(1.22e-5)/2,len(t3))
-    on4 = t4 + np.random.uniform((-1.22e-5)/2,(1.22e-5)/2,len(t4))
+    # DEFINE PARAMETERS USED ACROSS ALL FOUR TELESCOPES
+    # declare number of harmonics
+    harmonics = 1
 
+    # on window - get from wiki page
+    hz = float(df["Window size [Hz]"][j])
+    logging.info(f"   * window size: {hz} Hz")
+
+    # loop through amplitudes for each magnitude and test recovery and calculate significance
     for amp in tqdm(amps):
-        logging.info(f"   * amplitude of injected signal: {amp} V")
-        sin1 = np.real(sinusoid(time2,amp,p,0))
-        sin2 = np.real(sinusoid(time2,amp,p,0))
-        sin3 = np.real(sinusoid(time3,amp,p,0))
-        sin4 = np.real(sinusoid(time4,amp,p,0))
-        
-        signal1 = on1 + sin1
-        signal2 = on2 + sin2
-        signal3 = on3 + sin3
-        signal4 = on4 + sin4
-
-        # re-digitization
-        dig1 = np.zeros(len(signal1))
-        dig2 = np.zeros(len(signal2))
-        dig3 = np.zeros(len(signal3))
-        dig4 = np.zeros(len(signal4))
-
-        dig_bins1 = np.digitize(signal1,edges,right=True)
-        dig_bins2 = np.digitize(signal2,edges,right=True)
-        dig_bins3 = np.digitize(signal3,edges,right=True)
-        dig_bins4 = np.digitize(signal4,edges,right=True)
-
-        for i,b in enumerate(dig_bins2):
-            dig1[i] = edges[dig_bins1[i]-1]
-            dig2[i] = edges[dig_bins2[i]-1]
-            dig3[i] = edges[dig_bins3[i]-1]
-            dig4[i] = edges[dig_bins4[i]-1]
-        
-        spacing1 = get_spacing(samp,len(dig2))
-        spacing2 = get_spacing(samp,len(dig2))
-        spacing3 = get_spacing(samp,len(dig3))
-        spacing4 = get_spacing(samp,len(dig4))
-        
-        
-        harmonics = 1
+         # define array for p-values for each amplitude to combine all telescopes into one p-value
         p_array=[]
-        
-        # on window - get from wiki page
-        hz = float(df["Window size [Hz]"][j])
-        logging.info(f"   * window size: {hz} Hz")
-        
-        pts1 = 2*hz/spacing1
-        pts2 = 2*hz/spacing2 
-        pts3 = 2*hz/spacing3
-        pts4 = 2*hz/spacing4
 
-        p1 = calc_p_gumball(time1,dig1,p,1,rundate,spacing1,amp, samp=samp1,numpoints=pts1,plot=True,showplots=False)
-        p2 = calc_p_gumball(time2,dig2,p,2,rundate,spacing2,amp, samp=samp, numpoints=pts2,plot=True,showplots=False)
-        p3 = calc_p_gumball(time3,dig3,p,3,rundate,spacing3,amp, samp=samp, numpoints=pts3,plot=True,showplots=False)
-        p4 = calc_p_gumball(time4,dig4,p,4,rundate,spacing4,amp, samp=samp, numpoints=pts4,plot=True,showplots=False)
-        
-        p_array.append(p1)
-        p_array.append(p2)
-        p_array.append(p3)
-        p_array.append(p4)
-        
-        all_pvals.append(p_array)
+        # for each amplitude, we use all the available telescope data
+        for tel, hdul in hduls.items():
+            # define the flux and times from the data
+            flux, times = hdul[1].data['signal'], hdul[1].data['time']
+            
+            # calculate the sampling rate
+            samp = int(1/(times[1]-times[0]))
+
+            # undigitize the data by randomly adding noise below the digitization limit
+            on = flux + np.random.uniform((-1.22e-5)/2,(1.22e-5)/2,len(flux))
+
+            # create periodic signal
+            sine = np.real(sinusoid(times,amp,p,0))
+
+            # add the periodic signal to the undigitized data
+            signal = on + sine
+
+            # re-digitize the data with the periodic signal
+            dig = np.zeros(len(signal))
+            dig_bins = np.digitize(signal,edges,right=True)
+            for i,b in enumerate(dig_bins):
+                dig[i] = edges[dig_bins[i]-1]
+            spacing = get_spacing(samp,len(dig))
+
+
+            # define number of points used in data
+            pts = 2*hz/spacing
+            # caluclate p-value using gumbel distribution
+            pval = calc_p_gumball(times,dig,p,1,rundate,spacing,amp, samp=samp,numpoints=pts,plot=True,showplots=False)
+
+            p_array.append(pval)
+
+        # calculate the total significance of the signal recovery from all telescopes with data
         sig = calc_sigma(p_array)
         print(amp,sig,p_array)
         logging.info(f"   * gumball_p_array: {p_array}")
-        logging.info(rf"   * total significance: {sig} $\sigma$")
+        logging.info(f"   * total significance: {sig} \u03C3")
+
 
 logging.info(f"time finished: {time.localtime()}")
