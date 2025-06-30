@@ -125,6 +125,8 @@ print(dates)
 a = input("Pause before entering the abyss and state your cause.")
 
 for j,rundate in enumerate(dates):
+    print(f"Start analysis of run: {rundate}")
+    print("---------------------------------------")
     logging.info(f"Start analysis of run: {rundate}")
     logging.info("---------------------------------------")
     
@@ -156,6 +158,7 @@ for j,rundate in enumerate(dates):
 
     # loop through amplitudes for each magnitude and test recovery and calculate significance
     for amp in tqdm(amps):
+        logging.info(f"   * amplitude: {amp:.2e} V")
          # define array for p-values for each amplitude to combine all telescopes into one p-value
         p_array=[]
 
