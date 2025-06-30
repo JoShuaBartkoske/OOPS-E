@@ -80,7 +80,25 @@ def wiki_table_to_dataframe(filename):
     df = pd.DataFrame(rows, columns=headers)
     return df
 
-# Example usage
+def dataframe_to_wikitable(df, output_file):
+    with open(output_file, 'w') as f:
+        f.write('{| class="wikitable"\n')
+        f.write('|-\n')
+
+        # Headers
+        for col in df.columns:
+            f.write(f'! {col}\n')
+
+        # Rows
+        for _, row in df.iterrows():
+            f.write('|-\n')
+            for value in row:
+                f.write(f'| {value}\n')
+
+        f.write('|-\n')
+        f.write('|}\n')
+
+# Convert wiki table to pandas dataframe
 df = wiki_table_to_dataframe('wikitable.txt')
 print(df)
 
@@ -103,9 +121,8 @@ for file in os.listdir(data_directory):
 
 # voltages for the injected sinusoidal signals from magnitudes 19, 20, 21, 22, and 23
 mags = np.arange(start=19,stop=24)
-amps = get_V(mags)
+
 logging.info(f"Magnitudes tested: {mags}")
-logging.info(f"Amplitudes corresponds to above magnitudes: {amps}")
 
 # pulse frequency - doesn't really need to match actual frequency exactly
 p = 19
@@ -119,7 +136,7 @@ edges = np.arange(-1,1,step)
 all_pvals = []
 
 # Now we use the Run name as the 'date' and loop
-dates = df["Run name"].values
+dates = df["Run name"].values[:2]
 print(dates)
 
 a = input("Pause before entering the abyss and state your cause.")
@@ -156,9 +173,14 @@ for j,rundate in enumerate(dates):
     hz = float(df["Window size [Hz]"][j])
     logging.info(f"   * window size: {hz} Hz")
 
-    # loop through amplitudes for each magnitude and test recovery and calculate significance
-    for amp in tqdm(amps):
+    # loop through each magnitude and test recovery and calculate significance
+    for mag in tqdm(mags):
+        # convert from magnitude to voltage
+        amp = get_V(mag)
         logging.info(f"   * amplitude: {amp:.2e} V")
+        # set up the column name using the magnitude
+        col_name = f'p{mag}'
+
          # define array for p-values for each amplitude to combine all telescopes into one p-value
         p_array=[]
 
@@ -197,8 +219,17 @@ for j,rundate in enumerate(dates):
         # calculate the total significance of the signal recovery from all telescopes with data
         sig = calc_sigma(p_array)
         print(amp,sig,p_array)
+
+        # add sig to dataframe
+        ## first get the index of the row
+        row_number = df[df['Run name'] == rundate].index
+        ## then call both row number and column and assign value
+        df.loc[df.index[row_number], col_name] = sig
+
         logging.info(f"   * gumball_p_array: {p_array}")
         logging.info(f"   * total significance: {sig} \u03C3")
 
 
+# Save the values in a new wikitable.
+dataframe_to_wikitable(df, 'output_wikitable.txt')
 logging.info(f"time finished: {time.localtime()}")
