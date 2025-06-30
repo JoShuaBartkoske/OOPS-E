@@ -187,7 +187,7 @@ for j,rundate in enumerate(dates):
             # define number of points used in data
             pts = 2*hz/spacing
             # caluclate p-value using gumbel distribution
-            pval = calc_p_gumball(times,dig,p,1,rundate,spacing,amp, samp=samp,numpoints=pts,plot=True,showplots=False)
+            pval = calc_p_gumball(times,dig,p,tel,rundate,spacing,amp, samp=samp,numpoints=pts,plot=True,showplots=False)
 
             p_array.append(pval)
 
