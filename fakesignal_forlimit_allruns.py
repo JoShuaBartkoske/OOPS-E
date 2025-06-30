@@ -136,7 +136,7 @@ edges = np.arange(-1,1,step)
 all_pvals = []
 
 # Now we use the Run name as the 'date' and loop
-dates = df["Run name"].values[:2]
+dates = df["Run name"].values
 print(dates)
 
 a = input("Pause before entering the abyss and state your cause.")
