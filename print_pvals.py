@@ -15,10 +15,11 @@ for block in run_blocks[1:]:  # Skip first split (text before first run)
         print(f"Run: {run_name}")
         
         # Find all gumball_p_array lists
-        arrays = re.findall(r"gumball_p_array: \[(.*?)\]", block, re.DOTALL)
+        arrays = re.findall(r"gumball_p_array: \[(.*?)\]\s", block, re.DOTALL)
+        # Find all significance values
+        significances = re.findall(r"total significance: (.*?) ", block)
         
-        for arr in arrays:
+        for arr, sig in zip(arrays, significances):
             # Extract float values
             values = re.findall(r"np\.float64\((.*?)\)", arr)
-            print(values)
-        print()
+            print(f"| {sig.strip()} p-array: {values}")
