@@ -647,3 +647,403 @@ INFO:root:   * amplitude: 1.19e-07 V
 INFO:root:   * gumball_p_array: [np.float64(0.6928232826540093), np.float64(0.8838977261786498), np.float64(0.7526081450875814), np.float64(0.922044517602306)]
 INFO:root:   * total significance: -2.277266759841461 σ
 INFO:root:time finished: time.struct_time(tm_year=2025, tm_mon=6, tm_mday=30, tm_hour=14, tm_min=57, tm_sec=34, tm_wday=0, tm_yday=181, tm_isdst=1)
+INFO:root:time started: time.struct_time(tm_year=2025, tm_mon=7, tm_mday=1, tm_hour=8, tm_min=16, tm_sec=57, tm_wday=1, tm_yday=182, tm_isdst=1)
+INFO:root:Magnitudes tested: [19 20 21 22 23]
+INFO:root:Pulse frequency: 19
+INFO:root:Start analysis of run: 20231207
+INFO:root:---------------------------------------
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20231207_T1.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20231207_T2.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20231207_T3.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20231207_T4.fits
+INFO:root:   * window size: 0.1 Hz
+INFO:root:   * amplitude: 4.73e-06 V
+INFO:root:   * gumball_p_array: [np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0)]
+INFO:root:   * total significance: inf σ
+INFO:root:   * amplitude: 1.88e-06 V
+INFO:root:   * gumball_p_array: [np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0)]
+INFO:root:   * total significance: inf σ
+INFO:root:   * amplitude: 7.49e-07 V
+INFO:root:   * gumball_p_array: [np.float64(5.440767514741651e-05), np.float64(3.866978426358969e-08), np.float64(7.562661608062626e-11), np.float64(8.159019015963054e-10)]
+INFO:root:   * total significance: inf σ
+INFO:root:   * amplitude: 2.98e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.9589923843660536), np.float64(0.2303175334995693), np.float64(0.5985261304937421), np.float64(0.5770020623915724)]
+INFO:root:   * total significance: -0.6488580798594904 σ
+INFO:root:   * amplitude: 1.19e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.9584874377627993), np.float64(0.2013330861784015), np.float64(0.9994262764341898), np.float64(0.9939100041989507)]
+INFO:root:   * total significance: -1.365013678862502 σ
+INFO:root:Start analysis of run: 20231019
+INFO:root:---------------------------------------
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20231019_T1.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20231019_T2.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20231019_T3.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20231019_T4.fits
+INFO:root:   * window size: 0.03 Hz
+INFO:root:   * amplitude: 4.73e-06 V
+INFO:root:   * gumball_p_array: [np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0)]
+INFO:root:   * total significance: inf σ
+INFO:root:   * amplitude: 1.88e-06 V
+INFO:root:   * gumball_p_array: [np.float64(1.0269562977782698e-12), np.float64(1.1102230246251565e-16), np.float64(7.320810624378282e-13), np.float64(6.025213661331463e-11)]
+INFO:root:   * total significance: inf σ
+INFO:root:   * amplitude: 7.49e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.42733928060994186), np.float64(0.11792904469435916), np.float64(0.2856132805741478), np.float64(0.8950776793325944)]
+INFO:root:   * total significance: 0.3373894083828391 σ
+INFO:root:   * amplitude: 2.98e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.6913947747980939), np.float64(0.886611310330917), np.float64(0.7502620637063051), np.float64(0.9070684601644212)]
+INFO:root:   * total significance: -2.2499744568083067 σ
+INFO:root:   * amplitude: 1.19e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.6504210915073056), np.float64(0.8852699164215754), np.float64(0.7284349954763372), np.float64(0.9200893972345208)]
+INFO:root:   * total significance: -2.139615265419724 σ
+INFO:root:Start analysis of run: 20231020
+INFO:root:---------------------------------------
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20231020_T1.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20231020_T2.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20231020_T3.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20231020_T4.fits
+INFO:root:   * window size: 0.03 Hz
+INFO:root:   * amplitude: 4.73e-06 V
+INFO:root:   * gumball_p_array: [np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0)]
+INFO:root:   * total significance: inf σ
+INFO:root:   * amplitude: 1.88e-06 V
+INFO:root:   * gumball_p_array: [np.float64(8.881784197001252e-16), np.float64(0.0), np.float64(4.884981308350689e-15), np.float64(4.773959005888173e-15)]
+INFO:root:   * total significance: inf σ
+INFO:root:   * amplitude: 7.49e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.14869353820918518), np.float64(0.017850273304492514), np.float64(0.2901457680842746), np.float64(0.16327965977332637)]
+INFO:root:   * total significance: 2.0235325665899317 σ
+INFO:root:   * amplitude: 2.98e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.42180599870900093), np.float64(0.8887243188898422), np.float64(0.2648240283765264), np.float64(0.3030605969414)]
+INFO:root:   * total significance: -0.0899501501609804 σ
+INFO:root:   * amplitude: 1.19e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.4393396386280124), np.float64(0.8833925904338407), np.float64(0.2892008999546276), np.float64(0.3096630907187934)]
+INFO:root:   * total significance: -0.16940162526117025 σ
+INFO:root:Start analysis of run: 20231203
+INFO:root:---------------------------------------
+WARNING:root:========File not found: ../data/psrj2229_fits/j2229_20231203_T1.fits=======
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20231203_T2.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20231203_T3.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20231203_T4.fits
+INFO:root:   * window size: 0.03 Hz
+INFO:root:   * amplitude: 4.73e-06 V
+INFO:root:   * gumball_p_array: [np.float64(0.9999999999988809), np.float64(0.9819217208857857), np.float64(0.0)]
+INFO:root:   * total significance: inf σ
+INFO:root:   * amplitude: 1.88e-06 V
+INFO:root:   * gumball_p_array: [np.float64(0.9999999999988819), np.float64(0.9819058769265822), np.float64(1.5670797992584085e-12)]
+INFO:root:   * total significance: 6.076910607850142 σ
+INFO:root:   * amplitude: 7.49e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.9999999999988826), np.float64(0.981899919881617), np.float64(0.007051893038473311)]
+INFO:root:   * total significance: 1.1408407058420291 σ
+INFO:root:   * amplitude: 2.98e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.9999999999988823), np.float64(0.9818980970955784), np.float64(0.5979554738670764)]
+INFO:root:   * total significance: -2.12071778522532 σ
+INFO:root:   * amplitude: 1.19e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.9999999999988824), np.float64(0.9818967788105434), np.float64(0.5916645310920711)]
+INFO:root:   * total significance: -2.099960266548443 σ
+INFO:root:Start analysis of run: 20231203_2
+INFO:root:---------------------------------------
+WARNING:root:========File not found: ../data/psrj2229_fits/j2229_20231203_2_T1.fits=======
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20231203_2_T2.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20231203_2_T3.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20231203_2_T4.fits
+INFO:root:   * window size: 0.1 Hz
+INFO:root:   * amplitude: 4.73e-06 V
+INFO:root:   * gumball_p_array: [np.float64(0.7307372180268421), np.float64(0.0), np.float64(0.0)]
+INFO:root:   * total significance: inf σ
+INFO:root:   * amplitude: 1.88e-06 V
+INFO:root:   * gumball_p_array: [np.float64(0.7307382678613552), np.float64(0.0), np.float64(0.0)]
+INFO:root:   * total significance: inf σ
+INFO:root:   * amplitude: 7.49e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.7307394907177611), np.float64(0.08135574162016135), np.float64(1.2530482655925823e-06)]
+INFO:root:   * total significance: 4.236919718187975 σ
+INFO:root:   * amplitude: 2.98e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.7307451371265109), np.float64(0.5232178014087943), np.float64(0.3688162762909418)]
+INFO:root:   * total significance: -0.48961872731468153 σ
+INFO:root:   * amplitude: 1.19e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.7307410145586024), np.float64(0.5121585536736961), np.float64(0.7281642835807687)]
+INFO:root:   * total significance: -1.0673892251466173 σ
+INFO:root:Start analysis of run: 20231204
+INFO:root:---------------------------------------
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20231204_T1.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20231204_T2.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20231204_T3.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20231204_T4.fits
+INFO:root:   * window size: 0.03 Hz
+INFO:root:   * amplitude: 4.73e-06 V
+INFO:root:   * gumball_p_array: [np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0)]
+INFO:root:   * total significance: inf σ
+INFO:root:   * amplitude: 1.88e-06 V
+INFO:root:   * gumball_p_array: [np.float64(2.873275701809064e-07), np.float64(1.3646750396389962e-11), np.float64(2.5075239434846353e-06), np.float64(1.1372924869745837e-05)]
+INFO:root:   * total significance: inf σ
+INFO:root:   * amplitude: 7.49e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.5167752159888296), np.float64(0.03987533443404101), np.float64(0.07581003180929591), np.float64(0.07763596700523079)]
+INFO:root:   * total significance: 2.034170846672383 σ
+INFO:root:   * amplitude: 2.98e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.5375255635713998), np.float64(0.7500855552289546), np.float64(0.056752254396249424), np.float64(0.07211593051855669)]
+INFO:root:   * total significance: 1.1829236472136087 σ
+INFO:root:   * amplitude: 1.19e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.5485558058932567), np.float64(0.7801821198204208), np.float64(0.051862671241819536), np.float64(0.07217089330314863)]
+INFO:root:   * total significance: 1.1937405167132793 σ
+INFO:root:Start analysis of run: 20231204_2
+INFO:root:---------------------------------------
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20231204_2_T1.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20231204_2_T2.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20231204_2_T3.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20231204_2_T4.fits
+INFO:root:   * window size: 0.1 Hz
+INFO:root:   * amplitude: 4.73e-06 V
+INFO:root:   * gumball_p_array: [np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0)]
+INFO:root:   * total significance: inf σ
+INFO:root:   * amplitude: 1.88e-06 V
+INFO:root:   * gumball_p_array: [np.float64(2.220446049250313e-16), np.float64(2.2426505097428162e-14), np.float64(2.990486569487416e-08), np.float64(8.510659876836968e-08)]
+INFO:root:   * total significance: inf σ
+INFO:root:   * amplitude: 7.49e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.0030824313032942197), np.float64(0.07895957020432653), np.float64(0.9772182351108668), np.float64(0.9019956639267135)]
+INFO:root:   * total significance: 1.863002413776567 σ
+INFO:root:   * amplitude: 2.98e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.33494651266534325), np.float64(0.0775455296330172), np.float64(0.9700393673500929), np.float64(0.9089643408483644)]
+INFO:root:   * total significance: 0.05443135730294983 σ
+INFO:root:   * amplitude: 1.19e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.3352563926876677), np.float64(0.0771235740347429), np.float64(0.9725154910129977), np.float64(0.9102347147662488)]
+INFO:root:   * total significance: 0.05473353651948316 σ
+INFO:root:Start analysis of run: 20231231
+INFO:root:---------------------------------------
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20231231_T1.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20231231_T2.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20231231_T3.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20231231_T4.fits
+INFO:root:   * window size: 0.1 Hz
+INFO:root:   * amplitude: 4.73e-06 V
+INFO:root:   * gumball_p_array: [np.float64(0.5384606300196411), np.float64(0.992091415860575), np.float64(0.97343072614626), np.float64(0.9996174578406166)]
+INFO:root:   * total significance: -2.6081852435075 σ
+INFO:root:   * amplitude: 1.88e-06 V
+INFO:root:   * gumball_p_array: [np.float64(0.5384542711838269), np.float64(0.9920927046078569), np.float64(0.9734335505741282), np.float64(0.9996173455069713)]
+INFO:root:   * total significance: -2.6081711521297337 σ
+INFO:root:   * amplitude: 7.49e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.5384523361844404), np.float64(0.9920932918762762), np.float64(0.9734315616793934), np.float64(0.9996173290512833)]
+INFO:root:   * total significance: -2.6081619151738056 σ
+INFO:root:   * amplitude: 2.98e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.538437953035473), np.float64(0.9920931269945137), np.float64(0.9734318764397237), np.float64(0.9996173377632437)]
+INFO:root:   * total significance: -2.608113468407696 σ
+INFO:root:   * amplitude: 1.19e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.5384375804073803), np.float64(0.992093720350135), np.float64(0.9734328600885338), np.float64(0.9996172778972322)]
+INFO:root:   * total significance: -2.608115031726391 σ
+INFO:root:Start analysis of run: 20240103
+INFO:root:---------------------------------------
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20240103_T1.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20240103_T2.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20240103_T3.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20240103_T4.fits
+INFO:root:   * window size: 0.1 Hz
+INFO:root:   * amplitude: 4.73e-06 V
+INFO:root:   * gumball_p_array: [np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0)]
+INFO:root:   * total significance: inf σ
+INFO:root:   * amplitude: 1.88e-06 V
+INFO:root:   * gumball_p_array: [np.float64(1.0292256253929821e-06), np.float64(2.2426505097428162e-14), np.float64(1.6014666037733605e-08), np.float64(2.5700735130085306e-06)]
+INFO:root:   * total significance: inf σ
+INFO:root:   * amplitude: 7.49e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.3348094117721868), np.float64(0.6008081781405514), np.float64(0.7208425283487916), np.float64(0.6594578282925061)]
+INFO:root:   * total significance: -0.8052203548667878 σ
+INFO:root:   * amplitude: 2.98e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.335685343394839), np.float64(0.958020282084591), np.float64(0.7627920642685604), np.float64(0.692237402143902)]
+INFO:root:   * total significance: -1.2567637318704532 σ
+INFO:root:   * amplitude: 1.19e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.3475000257303865), np.float64(0.9594146149829939), np.float64(0.7303467178706147), np.float64(0.6581967774825801)]
+INFO:root:   * total significance: -1.2069512311671504 σ
+INFO:root:Start analysis of run: 20240911
+INFO:root:---------------------------------------
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20240911_T1.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20240911_T2.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20240911_T3.fits
+WARNING:root:========File not found: ../data/psrj2229_fits/j2229_20240911_T4.fits=======
+INFO:root:   * window size: 0.05 Hz
+INFO:root:   * amplitude: 4.73e-06 V
+INFO:root:   * gumball_p_array: [np.float64(0.9987859845546497), np.float64(0.6970292281473738), np.float64(0.893116656087287)]
+INFO:root:   * total significance: -2.2390657566158705 σ
+INFO:root:   * amplitude: 1.88e-06 V
+INFO:root:   * gumball_p_array: [np.float64(0.9987847977931776), np.float64(0.6969739866404427), np.float64(0.8931194289136939)]
+INFO:root:   * total significance: -2.2388988657645257 σ
+INFO:root:   * amplitude: 7.49e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.9987838519172432), np.float64(0.6969514641699983), np.float64(0.8931156762736482)]
+INFO:root:   * total significance: -2.2388180298756444 σ
+INFO:root:   * amplitude: 2.98e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.9987839692238473), np.float64(0.6969518435140927), np.float64(0.8931202255769471)]
+INFO:root:   * total significance: -2.238830448131986 σ
+INFO:root:   * amplitude: 1.19e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.9987838740756287), np.float64(0.6969413605283657), np.float64(0.8931209845729845)]
+INFO:root:   * total significance: -2.238799622645543 σ
+INFO:root:Start analysis of run: 20240913
+INFO:root:---------------------------------------
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20240913_T1.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20240913_T2.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20240913_T3.fits
+WARNING:root:========File not found: ../data/psrj2229_fits/j2229_20240913_T4.fits=======
+INFO:root:   * window size: 0.05 Hz
+INFO:root:   * amplitude: 4.73e-06 V
+INFO:root:   * gumball_p_array: [np.float64(0.0), np.float64(0.0), np.float64(0.0)]
+INFO:root:   * total significance: inf σ
+INFO:root:   * amplitude: 1.88e-06 V
+INFO:root:   * gumball_p_array: [np.float64(1.1193490578875753e-11), np.float64(0.0), np.float64(1.687538997430238e-14)]
+INFO:root:   * total significance: inf σ
+INFO:root:   * amplitude: 7.49e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.7898334177610532), np.float64(0.012666107246799174), np.float64(0.7325435400597421)]
+INFO:root:   * total significance: 1.1174159595251534 σ
+INFO:root:   * amplitude: 2.98e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.7867173383889928), np.float64(0.7477605094295647), np.float64(0.7524453722407011)]
+INFO:root:   * total significance: -1.6487302015303205 σ
+INFO:root:   * amplitude: 1.19e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.7765940407793286), np.float64(0.7519400649727788), np.float64(0.7473713551040526)]
+INFO:root:   * total significance: -1.6285710319940636 σ
+INFO:root:Start analysis of run: 20241004
+INFO:root:---------------------------------------
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20241004_T1.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20241004_T2.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20241004_T3.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20241004_T4.fits
+INFO:root:   * window size: 0.05 Hz
+INFO:root:   * amplitude: 4.73e-06 V
+INFO:root:   * gumball_p_array: [np.float64(0.0), np.float64(0.0), np.float64(0.0), np.float64(0.0)]
+INFO:root:   * total significance: inf σ
+INFO:root:   * amplitude: 1.88e-06 V
+INFO:root:   * gumball_p_array: [np.float64(4.440892098500626e-16), np.float64(3.255962166548443e-11), np.float64(0.0), np.float64(7.460698725481052e-14)]
+INFO:root:   * total significance: inf σ
+INFO:root:   * amplitude: 7.49e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.14194676853512977), np.float64(0.8028614336979486), np.float64(0.19729007477980998), np.float64(0.47157519042646134)]
+INFO:root:   * total significance: 0.4275500965747159 σ
+INFO:root:   * amplitude: 2.98e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.13856881286240874), np.float64(0.8929369361152952), np.float64(0.34492729774694186), np.float64(0.8551714426585594)]
+INFO:root:   * total significance: -0.19682867595448172 σ
+INFO:root:   * amplitude: 1.19e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.14857877127150132), np.float64(0.8967880922585589), np.float64(0.3411691958971125), np.float64(0.8539622665423253)]
+INFO:root:   * total significance: -0.23184106163524457 σ
+INFO:root:Start analysis of run: 20241007
+INFO:root:---------------------------------------
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20241007_T1.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20241007_T2.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20241007_T3.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20241007_T4.fits
+INFO:root:   * window size: 0.05 Hz
+INFO:root:   * amplitude: 4.73e-06 V
+INFO:root:   * gumball_p_array: [np.float64(0.0), np.float64(0.0), np.float64(0.8229009439385919), np.float64(0.0)]
+INFO:root:   * total significance: inf σ
+INFO:root:   * amplitude: 1.88e-06 V
+INFO:root:   * gumball_p_array: [np.float64(2.220446049250313e-15), np.float64(3.8113956435381624e-13), np.float64(0.8229023865407075), np.float64(0.0)]
+INFO:root:   * total significance: inf σ
+INFO:root:   * amplitude: 7.49e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.03307240394609512), np.float64(0.12773901071098337), np.float64(0.822901329814877), np.float64(9.752137746121825e-05)]
+INFO:root:   * total significance: 3.503239139265918 σ
+INFO:root:   * amplitude: 2.98e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.547072657228992), np.float64(0.8027967347305851), np.float64(0.8229020089365995), np.float64(0.15649922876078493)]
+INFO:root:   * total significance: -0.45593630968735355 σ
+INFO:root:   * amplitude: 1.19e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.5490786481924319), np.float64(0.8208861324828203), np.float64(0.8229030944398934), np.float64(0.7281344192411194)]
+INFO:root:   * total significance: -1.7059786809426658 σ
+INFO:root:Start analysis of run: 20241008
+INFO:root:---------------------------------------
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20241008_T1.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20241008_T2.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20241008_T3.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20241008_T4.fits
+INFO:root:   * window size: 0.05 Hz
+INFO:root:   * amplitude: 4.73e-06 V
+INFO:root:   * gumball_p_array: [np.float64(0.8033461325149852), np.float64(0.9090700712253006), np.float64(0.8924178723728398), np.float64(0.9592965158835111)]
+INFO:root:   * total significance: -2.9895908824658006 σ
+INFO:root:   * amplitude: 1.88e-06 V
+INFO:root:   * gumball_p_array: [np.float64(0.8033499462888025), np.float64(0.9090760680573698), np.float64(0.8924298646609505), np.float64(0.9592972577335022)]
+INFO:root:   * total significance: -2.989651226946047 σ
+INFO:root:   * amplitude: 7.49e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.8033455202192127), np.float64(0.9090791284650361), np.float64(0.8924337205378011), np.float64(0.9592969450052321)]
+INFO:root:   * total significance: -2.989655599322146 σ
+INFO:root:   * amplitude: 2.98e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.803352488944967), np.float64(0.9090843602032451), np.float64(0.8924350735887141), np.float64(0.9592969063483727)]
+INFO:root:   * total significance: -2.989693158770881 σ
+INFO:root:   * amplitude: 1.19e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.8033499854509162), np.float64(0.9090821221531703), np.float64(0.8924359157745203), np.float64(0.959297898572854)]
+INFO:root:   * total significance: -2.989684657140925 σ
+INFO:root:Start analysis of run: 20241024
+INFO:root:---------------------------------------
+WARNING:root:========File not found: ../data/psrj2229_fits/j2229_20241024_T1.fits=======
+WARNING:root:========File not found: ../data/psrj2229_fits/j2229_20241024_T2.fits=======
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20241024_T3.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20241024_T4.fits
+INFO:root:   * window size: 0.05 Hz
+INFO:root:   * amplitude: 4.73e-06 V
+INFO:root:   * gumball_p_array: [np.float64(0.8441062177580179), np.float64(0.9626929216340135)]
+INFO:root:   * total significance: -2.0798612858418544 σ
+INFO:root:   * amplitude: 1.88e-06 V
+INFO:root:   * gumball_p_array: [np.float64(0.8441271625317035), np.float64(0.9626909769826921)]
+INFO:root:   * total significance: -2.0799450662021655 σ
+INFO:root:   * amplitude: 7.49e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.8441229482146768), np.float64(0.9626918282474637)]
+INFO:root:   * total significance: -2.079929964624458 σ
+INFO:root:   * amplitude: 2.98e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.844126380364117), np.float64(0.9626922842890585)]
+INFO:root:   * total significance: -2.079946651888237 σ
+INFO:root:   * amplitude: 1.19e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.8441262385086802), np.float64(0.9626921359659623)]
+INFO:root:   * total significance: -2.079945467793978 σ
+INFO:root:Start analysis of run: 20241028
+INFO:root:---------------------------------------
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20241028_T1.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20241028_T2.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20241028_T3.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20241028_T4.fits
+INFO:root:   * window size: 0.04 Hz
+INFO:root:   * amplitude: 4.73e-06 V
+INFO:root:   * gumball_p_array: [np.float64(0.9203211415128276), np.float64(0.98564530067958), np.float64(0.9971127941395588), np.float64(0.9998052874594827)]
+INFO:root:   * total significance: -4.468709413934988 σ
+INFO:root:   * amplitude: 1.88e-06 V
+INFO:root:   * gumball_p_array: [np.float64(0.9203201640479859), np.float64(0.9856459322361564), np.float64(0.9971152504525792), np.float64(0.9998052135596031)]
+INFO:root:   * total significance: -4.468725824322339 σ
+INFO:root:   * amplitude: 7.49e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.9203246449219971), np.float64(0.9856448980300471), np.float64(0.9971162660032875), np.float64(0.999805177215432)]
+INFO:root:   * total significance: -4.46876586131693 σ
+INFO:root:   * amplitude: 2.98e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.9203246540143036), np.float64(0.9856455845225311), np.float64(0.9971164892842022), np.float64(0.9998051666170034)]
+INFO:root:   * total significance: -4.4687735300459845 σ
+INFO:root:   * amplitude: 1.19e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.920321980166062), np.float64(0.9856452242094064), np.float64(0.9971166794024744), np.float64(0.9998051726019747)]
+INFO:root:   * total significance: -4.4687478962424345 σ
+INFO:root:Start analysis of run: 20241030
+INFO:root:---------------------------------------
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20241030_T1.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20241030_T2.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20241030_T3.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20241030_T4.fits
+INFO:root:   * window size: 0.04 Hz
+INFO:root:   * amplitude: 4.73e-06 V
+INFO:root:   * gumball_p_array: [np.float64(0.7377756500490539), np.float64(0.15326204852431913), np.float64(0.9000728293666499), np.float64(0.12900984376715363)]
+INFO:root:   * total significance: 0.32848162978191536 σ
+INFO:root:   * amplitude: 1.88e-06 V
+INFO:root:   * gumball_p_array: [np.float64(0.7377827569319693), np.float64(0.1532556152853365), np.float64(0.9000944408272548), np.float64(0.12899922606537817)]
+INFO:root:   * total significance: 0.32852431340948396 σ
+INFO:root:   * amplitude: 7.49e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.7377800708212634), np.float64(0.15324884458223698), np.float64(0.900105471216269), np.float64(0.1289941758682721)]
+INFO:root:   * total significance: 0.32855949864143225 σ
+INFO:root:   * amplitude: 2.98e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.7377805244295237), np.float64(0.15324597366926762), np.float64(0.9001075700285776), np.float64(0.12899179304786346)]
+INFO:root:   * total significance: 0.328575632075833 σ
+INFO:root:   * amplitude: 1.19e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.7377830690241906), np.float64(0.15324878025962962), np.float64(0.9001065656370408), np.float64(0.12899060234302606)]
+INFO:root:   * total significance: 0.3285702559597722 σ
+INFO:root:Start analysis of run: 20241202
+INFO:root:---------------------------------------
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20241202_T1.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20241202_T2.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20241202_T3.fits
+INFO:root:   * Opened file: ../data/psrj2229_fits/j2229_20241202_T4.fits
+INFO:root:   * window size: 0.03 Hz
+INFO:root:   * amplitude: 4.73e-06 V
+INFO:root:   * gumball_p_array: [np.float64(0.996864812986735), np.float64(0.9999925358220351), np.float64(0.554828526325238), np.float64(0.9999972102032791)]
+INFO:root:   * total significance: -2.7258048333650957 σ
+INFO:root:   * amplitude: 1.88e-06 V
+INFO:root:   * gumball_p_array: [np.float64(0.9968625877667938), np.float64(0.9999925365016408), np.float64(0.5547639966146729), np.float64(0.9999972130563137)]
+INFO:root:   * total significance: -2.7255712300871284 σ
+INFO:root:   * amplitude: 7.49e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.9968619022558797), np.float64(0.9999925351713905), np.float64(0.5547365754514811), np.float64(0.9999972143868167)]
+INFO:root:   * total significance: -2.7254724770126124 σ
+INFO:root:   * amplitude: 2.98e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.9968616827294525), np.float64(0.999992535543357), np.float64(0.554727535440841), np.float64(0.9999972146961658)]
+INFO:root:   * total significance: -2.725439935301338 σ
+INFO:root:   * amplitude: 1.19e-07 V
+INFO:root:   * gumball_p_array: [np.float64(0.9968617477993273), np.float64(0.9999925359594447), np.float64(0.554727544041642), np.float64(0.9999972150614892)]
+INFO:root:   * total significance: -2.7254400960026306 σ
+INFO:root:time finished: time.struct_time(tm_year=2025, tm_mon=7, tm_mday=1, tm_hour=9, tm_min=26, tm_sec=58, tm_wday=1, tm_yday=182, tm_isdst=1)
